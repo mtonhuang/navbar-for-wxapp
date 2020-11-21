@@ -69,6 +69,6 @@ home: function () {
 
 ---
 
-# Contributor
+## Contributor
 
 - mtonhuang
