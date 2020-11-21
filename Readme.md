@@ -1,6 +1,6 @@
-### navbar-for-wxapp
+# navbar-for-wxapp
 
-#### 1. 【必填】index.json
+## 1. 【必填】index.json
 
 ```JS
 {
@@ -11,7 +11,7 @@
 }
 ```
 
-#### 2. 【必填】index.wxml
+## 2. 【必填】index.wxml
 
 - 给页面的最大父级 padding-top
 - 引入组件，名称为 index.json 中自定义的组件名称 nav-bar
@@ -31,7 +31,7 @@
 </view>
 ```
 
-#### 3. 【必填】根据不同机型，计算出 height 与 status 的值
+## 3. 【必填】根据不同机型，计算出 height 与 status 的值
 
 ```JS
 onLoad() {
@@ -49,7 +49,7 @@ onLoad() {
     }
 ```
 
-#### 4. 【选填】事件 back 或者 home
+## 4. 【选填】事件 back 或者 home
 
 ```JS
 // 根据业务需求
@@ -65,10 +65,10 @@ home: function () {
 }
 ```
 
-#### 5.【选填】读者也可以自定义字体颜色等，写法就不再赘述
+## 5.【选填】读者也可以自定义字体颜色等，写法就不再赘述
 
 ---
 
-### Contributor
+# Contributor
 
 - mtonhuang
