@@ -1,9 +1,5 @@
 # navbar-for-wxapp
 
-效果如下随意变换：（侵删）
-![](https://act.weixin.qq.com/static/images/202011/f2b85d16a1259b83d9dc04e459723b44_620x263.png)
-![](https://act.weixin.qq.com/static/images/202011/82d474cb33350ead8d97bf66258dda09_528x150.png)
-
 ### 1. 【必填】index.json
 
 ```JS
@@ -72,7 +68,10 @@ home: function () {
 ### 5.【选填】读者也可以自定义字体颜色等，写法就不再赘述
 
 ---
+效果如下随意变换：（侵删）
 
+<div align=center>![这里写图片描述](https://act.weixin.qq.com/static/images/202011/f2b85d16a1259b83d9dc04e459723b44_620x263.png)
+<div align=center>![这里写图片描述](https://act.weixin.qq.com/static/images/202011/82d474cb33350ead8d97bf66258dda09_528x150.png)
 ### Contributor
 
 - mtonhuang
