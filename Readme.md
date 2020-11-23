@@ -70,8 +70,12 @@ home: function () {
 ---
 效果如下随意变换：（侵删）
 
-<div align=center>![这里写图片描述](https://act.weixin.qq.com/static/images/202011/f2b85d16a1259b83d9dc04e459723b44_620x263.png)
-<div align=center>![这里写图片描述](https://act.weixin.qq.com/static/images/202011/82d474cb33350ead8d97bf66258dda09_528x150.png)
+<div style="align: center">
+<img src="https://act.weixin.qq.com/static/images/202011/f2b85d16a1259b83d9dc04e459723b44_620x263.png"/>
+</div>
+<div style="align: center">
+<img src="https://act.weixin.qq.com/static/images/202011/82d474cb33350ead8d97bf66258dda09_528x150.png"/>
+</div>
 ### Contributor
 
 - mtonhuang
