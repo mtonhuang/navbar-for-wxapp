@@ -23,20 +23,20 @@ Component({
         }
     },
     attached: function(){
-        var that = this;
-        that.getSysmInfo();
-        that.setStyle();
+        const self = this;
+        self.getSysmInfo();
     },
     data: {
 
     },
     methods: {
         getSysmInfo: function() {
+            const self = this;
             wx.getSystemInfo({
                 success: function(res) {
                     let isIos = res.system.indexOf('iOS') > -1;
                     let status = res.statusBarHeight;
-                    that.setData({
+                    self.setData({
                         navHeight: isIos ? 44 : 48,
                         status: status
                     })
