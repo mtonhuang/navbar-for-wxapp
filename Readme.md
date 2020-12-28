@@ -1,4 +1,108 @@
-# navbar-for-wxapp
+github地址，可以直接clone复用：[navbar-for-wxapp](https://github.com/mtonhuang/navbar-for-wxapp)
+
+<div style="align: center">
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6c0515bc779440bf95c812adfb02a8a8~tplv-k3u1fbpfcp-zoom-1.image"/>
+</div>
+
+看了上图，你可以能会说：“就这? 丑不拉几的...”
+
+当然，人靠衣装，navbar靠背景，换张背景图，你可能就经常见过啦，效果如下：（随便拿了星巴克小程序图，侵删）
+
+<div style="align: center">
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2fb10ac0e8114f9abe468620d5ad74f8~tplv-k3u1fbpfcp-zoom-1.image"/>
+</div>
+
+---
+
+<div style="align: center">
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a82a79d1507d419b81b5e05ad285caea~tplv-k3u1fbpfcp-zoom-1.image"/>
+</div>
+
+ok，废话不多说，直接代码走起...
+
+## 一、如何实现
+### 1. index.js
+```JS
+/*
+ * @Author: mtonhuang
+ * @Feature: 小程序自定义导航栏组件 
+ */
+
+Component({
+    properties: {
+        titleText: { //导航栏文字
+            type: String,
+            value: '导航栏'
+        },
+        backgroundImg: { //背景图片路径
+            type: String,
+            value: ''
+        },
+        backIcon: { //返回按钮
+            type: String,
+            value: ''
+        },
+        homeIcon: { //房子按钮
+            type: String,
+            value: ''
+        }
+    },
+    attached: function(){
+        const self = this;
+        self.getSysmInfo();
+    },
+    data: {
+
+    },
+    methods: {
+        getSysmInfo: function() {
+            const self = this;
+            wx.getSystemInfo({
+                success: function(res) {
+                    let isIos = res.system.indexOf('iOS') > -1;
+                    let status = res.statusBarHeight;
+                    self.setData({
+                        navHeight: isIos ? 44 : 48,
+                        status: status
+                    })
+                }
+            })
+        },
+        back: function(){
+            this.triggerEvent('back')
+        },
+        home: function() {
+            this.triggerEvent('home');
+        }
+    }
+})
+
+```
+
+### 2. index.wxml
+```html
+<view class="nav" style="height: {{status + navHeight}}px">
+    <view class="index-banner" wx:if="{{backgroundImg}}">
+        <image class="index-banner__cover" mode="scaleToFill" src="{{backgroundImg}}"></image>
+    </view>
+    <view class="status" style="height: {{status}}px;"></view>
+    <view class="navbar" style="height:{{navHeight}}px;">
+        <view class="capsule" style="{{backIcon ? '' : 'width: 152rpx;margin-left: 24rpx'}}">
+            <view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
+                <image class="imag_back" src="{{backIcon}}"></image>
+            </view>
+            <view class="home-icon" wx:if="{{homeIcon}}" bindtap="home" style="{{backIcon ? '' : 'left: 84.2rpx'}}">
+                <image class="imag_home" src="{{homeIcon}}"></image>
+            </view>
+        </view>
+        <view class="nav-title" wx:if="{{titleText}}">
+            <text>{{titleText}}</text>
+        </view>
+    </view>
+</view>
+```
+
+## 二、如何使用
 
 ### 1. 【必填】index.json
 
@@ -25,8 +129,7 @@
   backIcon="../../assets/img/svg/back.svg"
   homeIcon="../../assets/img/svg/home.svg"
   titleText="这是自定义导航栏"
-  backgroundImg="test.png"
-  backIcon="../../assets/img/svg/back_default.svg">
+  backgroundImg="test.png">
   </nav-bar>
 </view>
 ```
@@ -68,18 +171,11 @@ home: function () {
 ### 5.【选填】读者也可以自定义字体颜色等，写法就不再赘述
 
 ---
-效果如下随意变换：（侵删）
-
-<div style="align: center">
-<img src="https://act.weixin.qq.com/static/images/202011/f2b85d16a1259b83d9dc04e459723b44_620x263.png"/>
-</div>
-
-
-
-<div style="align: center">
-<img src="https://act.weixin.qq.com/static/images/202011/82d474cb33350ead8d97bf66258dda09_528x150.png"/>
-</div>
 
 ### Contributor
 
 - mtonhuang
+
+当然，喜欢的话，请不要吝啬您的start for my [github blog](https://github.com/mtonhuang/blog)，Thanks♪(･ω･)ﾉ
+
+
