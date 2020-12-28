@@ -1,19 +1,27 @@
-<view class="nav" style="height: {{status + navHeight}}px">
-    <view class="index-banner" wx:if="{{backgroundImg}}">
-        <image class="index-banner__cover" mode="scaleToFill" src="{{backgroundImg}}"></image>
+<view class="nav" style="height: {{status + navHeight}}px;">
+  <view class="status" style="height: {{status}}px;{{containerStyle}}"></view>
+  <view class="navbar" style="height:{{navHeight}}px;{{containerStyle}}">
+    <view style="{{backIcon ? '' : 'width: 152rpx;margin-left: 24rpx'}}">
+      <view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
+        <image class="imag_back" src="{{backIcon}}"></image>
+      </view>
+      <view
+        class="home-icon"
+        wx:if="{{homeIcon}}"
+        bindtap="home"
+        style="{{backIcon ? '' : 'left: 84.2rpx'}}"
+      >
+        <image class="imag_home" src="{{homeIcon}}"></image>
+      </view>
     </view>
-    <view class="status" style="height: {{status}}px;"></view>
-    <view class="navbar" style="height:{{navHeight}}px;">
-        <view class="capsule" style="{{backIcon ? '' : 'width: 152rpx;margin-left: 24rpx'}}">
-            <view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
-                <image class="imag_back" src="{{backIcon}}"></image>
-            </view>
-            <view class="home-icon" wx:if="{{homeIcon}}" bindtap="home" style="{{backIcon ? '' : 'left: 84.2rpx'}}">
-                <image class="imag_home" src="{{homeIcon}}"></image>
-            </view>
-        </view>
-        <view class="nav-title" wx:if="{{titleText}}">
-            <text>{{titleText}}</text>
-        </view>
+    <view class="nav-icon" wx:if="{{titleImg}}">
+      <image class="image_nav" src="{{titleImg}}" style="{{iconStyle}}"></image>
     </view>
+    <view class="nav-title" wx:if="{{titleText && !titleImg}}">
+      <text style="{{textStyle}}">{{titleText}}</text>
+    </view>
+  </view>
+  <view class="index-banner" wx:if="{{backgroundImg}}">
+    <image class="index-banner__cover" mode="scaleToFill" src="{{backgroundImg}}"></image>
+  </view>
 </view>
